@@ -6,8 +6,6 @@
 
 using namespace std;
 
-class IOInterface;
-
 class IOInterface {
 
 protected:
