@@ -6,11 +6,11 @@
 
 using namespace std;
 
-class IOInterface;
-
 class IOInterface {
 
 protected:
+
+	string _Name;
 
 	void InputValue(int& i) {
 		cin >> i;
@@ -20,5 +20,7 @@ protected:
 	void InputValue(std::string& A) {
 		getline(cin, A);
 	}
+
+	virtual string GetName() = 0;
 };
 #endif

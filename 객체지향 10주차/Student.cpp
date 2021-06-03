@@ -5,7 +5,7 @@
 using namespace std;
 
 Student::Student() {
-	_StdName = "홍길동";
+	_Name = "홍길동";
 	_Hakbun = 2019000000;
 	_SubNum = 1;
 	_Sub = new Subject[_SubNum];
@@ -15,7 +15,7 @@ Student::~Student() {};
 
 void Student::InputData() {
 	cout << "이름 : ";
-	InputValue(_StdName);
+	InputValue(_Name);
 	cout << "학번 : ";
 	InputValue(_Hakbun);
 	cout << "과목수 : ";
@@ -30,7 +30,7 @@ void Student::InputData() {
 }
 
 void Student::PrintData() const {
-	cout << "\n이름 : " << _StdName << "  학번 : " << _Hakbun << "\n";// << "  과목수 :" << _SubNum << //빼놓자
+	cout << "\n이름 : " << _Name << "  학번 : " << _Hakbun << "\n";// << "  과목수 :" << _SubNum << //빼놓자
 	cout << "\n==================================================\n      과목명        과목학점   과목등급   과목평점\n==================================================\n";
 	int i;
 	for (i = 0; i < _SubNum; i++)
@@ -63,7 +63,7 @@ Subject* Student::SubSearch() {
 	int cnt = -1;
 	for (i = 0; i < _SubNum; i++)
 	{
-		temp = _Sub->GetSubName();
+		temp = _Sub->GetName();
 		if (temp.compare(tempSubName) == 0) {
 			cnt = i;
 			break;
@@ -84,11 +84,11 @@ Subject* Student::SubSearch() {
 
 void Student::Modify() {
 	cout << "이름 : ";
-	InputValue(_StdName);
+	InputValue(_Name);
 	cout << "학번 : ";
 	InputValue(_Hakbun);
 }
 
-string Student::GetStdName() {
-	return _StdName;
+string Student:: GetName() {
+	return _Name;
 }
