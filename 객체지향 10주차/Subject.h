@@ -7,9 +7,8 @@
 
 class Subject : public IOInterface {
 protected:
-	std::string SubName;			// 과목이름
 	int Hakjum;						// 과목학점 
-	std::string Grade;				// 과목등급
+	string Grade;				// 과목등급
 	float GPA;						// 과목 평점
 
 public:
@@ -19,8 +18,10 @@ public:
 	void CalcGPA();										// 평점 계산
 	void Modify();										// 10주차 과제 추가사항
 	float GetGPA();										// 평점 반환
-	std::string GetSubName();	// 10주차 추가사항
+
 	void PrintData1() const;
+
+	string GetName() override; //iointerface 오버라이드
 };
 
 #endif

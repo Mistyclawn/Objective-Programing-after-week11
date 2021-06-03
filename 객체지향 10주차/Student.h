@@ -10,7 +10,6 @@ class Subject;
 
 class Student : public IOInterface{
 protected:
-	string _StdName; // 이름
 	int _Hakbun; // 학번
 	int _SubNum; // 과목수
 	Subject* _Sub; // 과목 클래스
@@ -24,7 +23,8 @@ public:
 	void CalcAveGPA(); // 평균 평점 계산
 	Subject* SubSearch(); // 10주차 추가
 	void Modify();
-	string GetStdName();
+
+	string GetName() override; //iointerface 오버라이드
 };
 
 

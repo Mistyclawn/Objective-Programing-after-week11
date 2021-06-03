@@ -89,7 +89,7 @@ Student* StdSearch(Student* pSt, int a) {
 	int cnt = 0;
 	for (i = 0; i < a; i++)
 	{
-		tempname = pSt[i].GetStdName();
+		tempname = pSt[i].GetName();
 		if (tempname == targetStd){
 			cnt++;
 			return &pSt[i];

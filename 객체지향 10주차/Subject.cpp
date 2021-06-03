@@ -6,14 +6,14 @@
 using namespace std;
 
 Subject::Subject() {
-	SubName = "국어";
+	_Name = "국어";
 	Hakjum = 3;
 	Grade = "A";
 }
 
 void Subject::InputData() {
 	cout << "\n교과목명 : ";
-	InputValue(SubName);
+	InputValue(_Name);
 	cout << "과목학점수 : ";
 	InputValue(Hakjum);
 	cout << "과목등급(A+ ~ F) : ";
@@ -24,7 +24,7 @@ void Subject::InputData() {
 void Subject::PrintData() const {
 
 	cout.width(18);
-	cout << SubName;
+	cout << _Name;
 	cout.width(10);
 	cout << Hakjum;
 	cout.width(10);
@@ -37,7 +37,7 @@ void Subject::PrintData() const {
 }				// 멤버변수 값 출력
 
 void Subject::PrintData1() const {
-	cout << "\n*(" << SubName << ", 학점 :" << Hakjum << ", 등급 :" << Grade;
+	cout << "\n*(" << _Name << ", 학점 :" << Hakjum << ", 등급 :" << Grade;
 }
 
 void Subject::CalcGPA() {
@@ -70,7 +70,7 @@ float Subject::GetGPA() {
 
 void Subject::Modify() {
 	cout << "\n교과목명 : ";
-	InputValue(SubName);
+	InputValue(_Name);
 	cout << "과목학점수 : ";
 	InputValue(Hakjum);
 	cout << "과목등급(A+ ~ F) : ";
@@ -79,6 +79,7 @@ void Subject::Modify() {
 	CalcGPA();
 }
 
-string Subject::GetSubName() {
-	return SubName;
+
+string Subject::GetName() {
+	return _Name;
 }
